@@ -1,4 +1,5 @@
 import "./App.css";
+// import { useState, useEffect } from "react";
 import React from "react";
 import ContactForm from "./components/ContactForm";
 import ContactList from "./components/ContactList";
@@ -6,6 +7,30 @@ import ContactItem from "./components/ContactItem";
 import Filter from "./components/Filter";
 import { nanoid } from "nanoid";
 import PropTypes from "prop-types";
+
+// export default function App() {
+//   const [contacts, setContacts] = useState([]);
+//   const [filter, setFilter] = useState("");
+
+//   console.log(contacts);
+
+//   return (
+//     <div className="App">
+//       <h1 className="headerOptions">Phonebook</h1>
+//       <ContactForm className="ContactForm" onSubmit={this.formSubmitHandler} />
+
+//       <h2 className="headerOptions">Contacts</h2>
+//       <Filter value={filter} onChange={this.changeFilter} />
+//       <ContactList
+//         className="ContactList"
+//         contacts={filteredContacts}
+//         onDeleteContact={this.deleteContact}
+//       >
+//         <ContactItem />
+//       </ContactList>
+//     </div>
+//   );
+// }
 
 class App extends React.Component {
   state = {
