@@ -1,33 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./ContactForm.css";
 import { nanoid } from "nanoid";
 import PropTypes from "prop-types";
 
-export default function ContactForm() {
-  // nameId = nanoid();
-  // telId = nanoid();
-
-  let [nameId, setNameId] = useState(nanoid());
-  let [telId, setTelId] = useState(nanoid());
+export default function ContactForm({ onSubmit }) {
+  // let [nameId, setNameId] = useState(nanoid());
+  // let [telId, setTelId] = useState(nanoid());
+  const [id, setId] = useState(nanoid());
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
-
-  // nameId = (event) => {
-  //   setNameId(nanoid());
-  //   console.log(nameId);
-  // };
-  // telId = (event) => {
-  //   setTelId(nanoid());
-  //   console.log(telId);
-  // };
-
-  // const handleNameChange = (event) => {
-  //   setName(event.target.value);
-  // };
-
-  // const handleNumberChange = (event) => {
-  //   setNumber(event.target.value);
-  // };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -49,33 +30,28 @@ export default function ContactForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    this.props.onSubmit({ name, number });
+    onSubmit({ id, name, number });
 
     reset();
   };
 
   const reset = () => {
+    setId(nanoid());
     setName("");
     setNumber("");
   };
-
-  useEffect(() => {
-    console.log("processing useEffect!!!" + Date.now());
-  });
 
   return (
     <form onSubmit={handleSubmit} className="ContactForm">
       <label>
         Name
         <input
-          // className="Phonebook__Input"
           type="text"
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
-          // id={() => setNameId(nanoid())}
-          id={nameId}
+          // id={nameId}
           value={name}
           onChange={handleChange}
           placeholder="Name: Will Smith"
@@ -91,7 +67,7 @@ export default function ContactForm() {
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
           value={number}
-          id={telId}
+          // id={telId}
           onChange={handleChange}
           placeholder="Number: +380001112233"
           maxLength={15}
