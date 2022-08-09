@@ -10,6 +10,16 @@
   border-style: solid;
 }
 
+.contactDeleteBtn {
+  height: 25px;
+  margin-left: 20px;
+  border: 0;
+  border-radius: 2px;
+  background-color: rgb(255, 207, 51);
+  cursor: pointer;
+  align-items: center;
+}
+
 ul {
   margin: 0;
   padding: 0;

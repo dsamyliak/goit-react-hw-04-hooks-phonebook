@@ -1,9 +1,9 @@
 import React from "react";
-import "./ContactItem.css";
+import css from "./ContactItem.module.css";
 import PropTypes from "prop-types";
 
 const ContactItem = ({ name, number }) => (
-  <p className="contactText">
+  <p className={css.contactText}>
     {name}: {number}
   </p>
 );

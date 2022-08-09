@@ -1,0 +1,8 @@
+.contactText {
+  display: inline-flex;
+  margin: 0px 0px;
+  color: navy;
+  font-size: large;
+  font-weight: 600;
+  justify-items: left;
+}
