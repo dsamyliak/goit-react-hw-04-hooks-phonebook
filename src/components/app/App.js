@@ -1,9 +1,9 @@
 import css from "./App.module.css";
 import { useState, useEffect } from "react";
-import ContactForm from "../components/ContactForm";
-import ContactList from "../components/ContactList";
-import ContactItem from "../components/ContactItem";
-import Filter from "../components/Filter";
+import ContactForm from "../ContactForm";
+import ContactList from "../ContactList";
+import ContactItem from "../ContactItem";
+import Filter from "../Filter";
 
 export default function App() {
   const [contacts, setContacts] = useState(
